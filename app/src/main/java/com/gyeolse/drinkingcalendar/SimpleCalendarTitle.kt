@@ -91,8 +91,3 @@ fun Month.displayText(short: Boolean = true): String {
     val style = if (short) TextStyle.SHORT else TextStyle.FULL
     return getDisplayName(style, Locale.ENGLISH)
 }
-
-@Preview(showBackground = true)
-@Composable
-fun SimpleCalendarTitlePreview() {
-}
