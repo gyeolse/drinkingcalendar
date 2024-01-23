@@ -40,7 +40,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.gyeolse.drinkingcalendar.ui.main.MainScreen
+import com.gyeolse.drinkingcalendar.ui.main.MainViewModel
 import com.gyeolse.drinkingcalendar.ui.theme.DrinkingcalendarTheme
+import com.gyeolse.drinkingcalendar.util.ViewModelFactory
 import com.gyeolse.drinkingcalendar.util.rememberFirstCompletelyVisibleMonth
 import com.kizitonwose.calendar.compose.CalendarLayoutInfo
 import com.kizitonwose.calendar.compose.CalendarState
@@ -67,15 +71,25 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DrinkingcalendarTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+            // viewModel 을 불러와야한다. viewModel을 통해서 불러오면, repository를 지정할 수 없으므로,
+            // factory 를 선언해서 불러오도록 한다.
+            // val viewModel: MainViewModel = viewModel(). 불러올 수 없음..
+            
+            val viewModel: MainViewModel = viewModel(
+                factory = ViewModelFactory(application),
+            )
+            
+            MainScreen(viewModel = viewModel)
+
+//            DrinkingcalendarTheme {
+//                // A surface container using the 'background' color from the theme
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background
+//                ) {
+////                    Greeting("Android")
+//                }
+//            }
         }
     }
 }
