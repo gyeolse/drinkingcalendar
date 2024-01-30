@@ -98,6 +98,9 @@ dependencies {
     // Add Calendar Library
     implementation("com.kizitonwose.calendar:compose:2.4.1")
 
+    // navigation-compose
+    implementation("androidx.navigation:navigation-compose:2.7.6")
+
 }
 //dependencies {
 //    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")

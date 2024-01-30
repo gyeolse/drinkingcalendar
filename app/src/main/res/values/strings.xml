@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">drinkingcalendar</string>
+    <string name="text_calendar">calendar</string>
+    <string name="text_statistics">statistics</string>
+    <string name="text_ranking">text_ranking</string>
+    <string name="text_settings">text_settings</string>
 </resources>
